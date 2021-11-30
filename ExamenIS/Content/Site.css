@@ -1,12 +1,7 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
+﻿/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 37px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +17,54 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.boton-agregar-carrito {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+
+.carta-producto:hover .imagen-producto {
+    opacity: 0.2;
+}
+
+
+
+.carta-producto:hover .boton-agregar-carrito, .boton-agregar-carrito:hover {
+    display: inline-block;
+}
+
+.noHover {
+    pointer-events: none;
+}
+
+.precio-producto {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+
+.carta-producto:hover .precio-producto, .precio-producto:hover {
+    display: inline-block;
+
+}
+
