@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using ExamenIS.Models;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace ExamenIS.Handlers
 {
@@ -23,6 +24,10 @@ namespace ExamenIS.Handlers
                 ingredientes.Add(ingredienteLeido);
             }
             return ingredientes;
+        }
+
+        public String TransformarJsonListaIngredientes(List<IngredienteModel> ingredientes) {
+            return JsonConvert.SerializeObject(ingredientes);
         }
     }
 }

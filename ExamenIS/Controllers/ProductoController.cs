@@ -20,5 +20,9 @@ namespace ExamenIS.Controllers
             ViewBag.Ingredientes = AccesoMetodosIngredientes.RecuperarListaIngredientes();
             return View();
         }
+
+        public JsonResult ObtenerJsonIngredientes() {
+            return Json(AccesoMetodosIngredientes.TransformarJsonListaIngredientes(AccesoMetodosIngredientes.RecuperarListaIngredientes()));
+        }
     }
 }
