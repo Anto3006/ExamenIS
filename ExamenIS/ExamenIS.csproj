@@ -121,9 +121,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\IngredientesHandler.cs" />
+    <Compile Include="Models\IngredienteModel.cs" />
+    <Compile Include="Models\PizzaModel.cs" />
+    <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +154,12 @@
     <Content Include="imagenes\bannerPaginaPrincipal.jpg" />
     <Content Include="imagenes\rock.png" />
     <Content Include="imagenes\shopping-cart.png" />
+    <Content Include="ingredientes\imagenes\arugula.jpg" />
+    <Content Include="ingredientes\imagenes\jamon.jpg" />
+    <Content Include="ingredientes\imagenes\pepperoni.jpg" />
+    <Content Include="ingredientes\imagenes\piña.jpg" />
+    <Content Include="ingredientes\imagenes\prosciutto.jpg" />
+    <Content Include="ingredientes\imagenes\tomate.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -177,6 +188,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="ingredientes\ingredientes.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -202,10 +214,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Producto\CrearPizzaPersonalizada.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
