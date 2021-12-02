@@ -1,0 +1,34 @@
+{
+  "Ingredientes": [
+    {
+      "Nombre":"Jamón",
+      "Precio":"1000",
+      "Imagen":"jamon.jpg"
+    },
+    {
+      "Nombre":"Pepperoni",
+      "Precio":"1000",
+      "Imagen":"pepperoni.jpg"
+    },
+    {
+      "Nombre":"Piña",
+      "Precio":"1500",
+      "Imagen": "piña.jpg"
+    },
+    {
+      "Nombre":"Tomate",
+      "Precio":"800",
+      "Imagen":"tomate.jpg"
+    },
+    {
+      "Nombre": "Arúgula",
+      "Precio": "1200",
+      "Imagen": "arugula.jpg"
+    },
+    {
+      "Nombre": "Prosciutto",
+      "Precio": "1700",
+      "Imagen": "prosciutto.jpg"
+    }
+  ]
+}
