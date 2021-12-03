@@ -25,5 +25,6 @@ namespace ExamenIS.Models
         public void CalcularPrecioTotal() {
             PrecioTotal = Producto.Precio * Cantidad;
         }
+
     }
 }

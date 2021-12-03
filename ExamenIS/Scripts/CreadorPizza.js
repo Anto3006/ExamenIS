@@ -4,7 +4,7 @@ const PRECIO_BASE_PIZZA = 2000;
 let precioTotal = PRECIO_BASE_PIZZA;
 
 
-async function obtenerIngredientesPosibles(categoria, columnaOrdenamiento, direccionOrdenamiento) {
+async function obtenerIngredientesPosibles() {
     await $.ajax({
         type: 'POST',
         url: $("#lista-ingredientes").data("request-url"),

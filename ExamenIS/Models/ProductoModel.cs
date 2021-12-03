@@ -12,5 +12,23 @@ namespace ExamenIS.Models
         public String NombreImagen { get; set; }
 
         public String Id { get; set; }
+
+        public override bool Equals(object objeto)
+        {
+            if ((objeto == null) || !this.GetType().Equals(objeto.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                ProductoModel otroProducto = (ProductoModel)objeto;
+                return otroProducto.Id == this.Id;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

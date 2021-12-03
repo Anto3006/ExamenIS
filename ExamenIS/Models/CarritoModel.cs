@@ -22,5 +22,38 @@ namespace ExamenIS.Models
                 PrecioTotal += itemCarrito.PrecioTotal;
             }
         }
+
+        public void AgregarProductoAlCarrito(ProductoModel producto, int cantidad)
+        {
+            if (VerificarSiProductoEnCarrito(producto))
+            {
+                AgregarCantidadAProducto(producto, cantidad);
+            }
+            else {
+                Items.Add(new ItemCarritoModel(producto, cantidad));
+            }
+        }
+
+        private bool VerificarSiProductoEnCarrito(ProductoModel producto)
+        {
+            foreach (ItemCarritoModel item in Items)
+            {
+                if (item.Producto.Equals(producto))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void AgregarCantidadAProducto(ProductoModel producto, int cantidad) {
+            foreach (ItemCarritoModel item in Items)
+            {
+                if (item.Producto.Equals(producto))
+                {
+                    item.Cantidad += cantidad;
+                }
+            }
+        }
     }
 }
