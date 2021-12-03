@@ -1,67 +1,60 @@
-﻿
-<div class="container-fluid" style="padding-left:45px; margin-top:30px; margin-bottom:40px">
-    <div class="row" style="height:10px">
-        <div class="col-1 bg-primary">
-
+﻿<div class="col" style="margin-top:2%">
+    <div class="row">
+        <div class="col-1 bg-primary"></div>
+        <div class="col-sm-auto">
+            <h2 style="font-weight:bold">Ingredientes</h2>
         </div>
-        <div class="col-sm-2" style="width:11%">
-            <h2>Ingredientes</h2>
-        </div>
-        <div class="col bg-primary">
+        <div class="col bg-primary"></div>
+    </div>
 
+    <div class="row">
+        <div class="container">
+            <div class="row d-flex" id="lista-ingredientes" data-request-url="@Url.Action("ObtenerJsonIngredientes","Producto")">
+                @foreach (var ingrediente in ViewBag.Ingredientes)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
+                            <img class="imagen-producto" src="~/ingredientes/imagenes/@ingrediente.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
+                            <div class="btn btn-primary noHover precio-producto">Precio: ₡@ingrediente.Precio</div>
+                            <button type="button" class="btn btn-primary boton-agregar-carrito" onclick="agregarIngrediente('@ingrediente.Nombre')">Agregar ingrediente</button>
+                            <div class="card-body">
+                                <p class="h5">@ingrediente.Nombre</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row d-flex" id="lista-ingredientes" data-request-url="@Url.Action("ObtenerJsonIngredientes","Producto")">
-        @foreach (var ingrediente in ViewBag.Ingredientes)
-        {
-            <div class="col-md-4">
-                <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
-                    <img class="imagen-producto" src="~/ingredientes/imagenes/@ingrediente.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
-                    <div class="btn btn-primary noHover precio-producto">Precio: ₡@ingrediente.Precio</div>
-                    <button type="button" class="btn btn-primary boton-agregar-carrito" onclick="agregarIngrediente('@ingrediente.Nombre')">Agregar ingrediente</button>
-                    <div class="card-body">
-                        <p class="h5">@ingrediente.Nombre</p>
+    <div class="row">
+        <div class="col-1 bg-primary"> </div>
+        <div class="col-sm-auto">
+            <h3 style="font-weight:bold">Su Pizza</h3>
+        </div>
+        <div class="col bg-primary"></div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col resumen-pizza h5 mt-5" style="margin-left:20%">
+                    <div class="row" id="fila-precio-total-pizza">
+                        <div class="col-3">
+                            *Total:
+                        </div>
+                        <div class="col-3" id="precio-total-pizza">
+                            ₡0
+                        </div>
+                    </div>
+                    <div class="row m-4" id="informacion-pizza" style="font-size:small">
+                        *La pizza incluye salsa de tomate y queso mozzarella.
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-</div>
-
-<div class="container-fluid" style="padding-left:45px; margin-top:30px; margin-bottom:40px">
-    <div class="row" style="height:10px">
-        <div class="col-1 bg-primary">
-
-        </div>
-        <div class="col-sm-2" style="width:7%">
-            <h3>Su Pizza</h3>
-        </div>
-        <div class="col bg-primary">
-
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col resumen-pizza h5">
-            <div class="row m-4" id="fila-precio-total-pizza">
-                <div class="col-3">
-                    *Total:
-                </div>
-                <div class="col-3" id="precio-total-pizza">
-                    ₡0
+                <div class="col d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center"><h3>Finalizar Pizza</h3></button>
                 </div>
             </div>
-            <div class="row m-4" id="informacion-pizza" style="font-size:small">
-                *La pizza incluye salsa de tomate y queso mozzarella.
-            </div>
-        </div>
-        <div class="col d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center"><h3>Finalizar Pizza</h3></button>
         </div>
     </div>
 </div>

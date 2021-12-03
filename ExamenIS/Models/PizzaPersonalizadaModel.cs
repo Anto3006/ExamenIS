@@ -5,18 +5,18 @@ using System.Web;
 
 namespace ExamenIS.Models
 {
-    public class PizzaModel : ProductoModel
+    public class PizzaPersonalizadaModel : ProductoModel
     {
-        public List<IngredienteModel> Ingredientes { get; }
+        public List<ProductoModel> Ingredientes { get; }
         private const double PRECIO_BASE_PIZZA = 2000;
 
-        public void AgregarIngrediente(IngredienteModel ingredienteNuevo) {
+        public void AgregarIngrediente(ProductoModel ingredienteNuevo) {
             this.Ingredientes.Add(ingredienteNuevo);
         }
 
         public void CalcularPrecioAPartirIngredientes() {
             double precioNuevo = 0;
-            foreach (IngredienteModel ingrediente in this.Ingredientes) {
+            foreach (ProductoModel ingrediente in this.Ingredientes) {
                 precioNuevo += ingrediente.Precio;
             }
             this.Precio = precioNuevo + PRECIO_BASE_PIZZA;

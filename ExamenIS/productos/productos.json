@@ -1,0 +1,29 @@
+{
+  "Productos": [
+    {
+      "Nombre":"Pasta Boloñesa",
+      "Precio":"3500",
+      "Imagen":"pastaBoloñesa.jpg"
+    },
+    {
+      "Nombre":"Pan de ajo",
+      "Precio":"1500",
+      "Imagen":"panDeAjo.jpg"
+    },
+    {
+      "Nombre":"Lasaña",
+      "Precio":"4500",
+      "Imagen":"lasaña.jpg"
+    },
+    {
+      "Nombre":"Focaccia",
+      "Precio":"1500",
+      "Imagen":"focaccia.jpg"
+    },
+    {
+      "Nombre":"Ensalada César",
+      "Precio":"1500",
+      "Imagen":"ensaladaCesar.jpg"
+    }
+  ]
+}

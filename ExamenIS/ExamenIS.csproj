@@ -125,9 +125,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\IngredientesHandler.cs" />
-    <Compile Include="Models\IngredienteModel.cs" />
-    <Compile Include="Models\PizzaModel.cs" />
+    <Compile Include="Handlers\ProductoHandler.cs" />
+    <Compile Include="Models\PizzaPersonalizadaModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -189,6 +188,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="ingredientes\ingredientes.json" />
+    <Content Include="productos\productos.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\CreadorPizza.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -216,9 +216,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Producto\CrearPizzaPersonalizada.cshtml" />
+    <Content Include="Views\Producto\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="productos\imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,29 @@
+{
+  "Productos": [
+    {
+      "Nombre": "Jamón",
+      "Precio": "3500",
+      "Imagen": "pizzaDeJamon.jpg"
+    },
+    {
+      "Nombre": "Pepperoni",
+      "Precio": "4000",
+      "Imagen": "pizzaDePepperoni.jpg"
+    },
+    {
+      "Nombre": "Hawaiana",
+      "Precio": "5000",
+      "Imagen": "pizzaHawaiana.jpg"
+    },
+    {
+      "Nombre": "Prosciutto y arúgula",
+      "Precio": "6000",
+      "Imagen": "pizzaDeProsciuttoArugula.jpg"
+    },
+    {
+      "Nombre": "Margarita",
+      "Precio": "3000",
+      "Imagen": "pizzaMargarita.jpg"
+    }
+  ]
+}

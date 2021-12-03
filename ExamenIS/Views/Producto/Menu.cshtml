@@ -1,0 +1,62 @@
+﻿<div class="col" style="margin-top:2%">
+    <div class="row">
+        <div class="col-1 bg-primary"></div>
+        <div class="col-sm-auto">
+            <h2 style="font-weight:bold">Nuestras Pizzas</h2>
+        </div>
+        <div class="col bg-primary"></div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row d-flex">
+                @foreach (var pizza in ViewBag.PizzasMenu)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
+                            <img class="imagen-producto" src="~/productos/imagenes/@pizza.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
+                            <div class="btn btn-primary noHover precio-producto">Precio: ₡@pizza.Precio</div>
+                            <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
+                            <div class="card-body">
+                                <p class="h5">@pizza.Nombre</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row d-flex mb-5 ms-3">
+                <div class="col-3">
+                    <a href="@Url.Action("CrearPizzaPersonalizada","Producto")" class="btn btn-primary text-center p-4"> <h3>Crear Pizza Personalizada</h3></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 bg-primary"></div>
+        <div class="col-sm-auto">
+            <h2 style="font-weight:bold">Nuestross Otros Productos</h2>
+        </div>
+        <div class="col bg-primary"></div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row d-flex">
+                @foreach (var producto in ViewBag.ProductosMenu)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
+                            <img class="imagen-producto" src="~/productos/imagenes/@producto.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
+                            <div class="btn btn-primary noHover precio-producto">Precio: ₡@producto.Precio</div>
+                            <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
+                            <div class="card-body">
+                                <p class="h5">@producto.Nombre</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
