@@ -1,0 +1,22 @@
+{
+  "Combos": [
+    {
+      "Nombre":"Pizza de jamón + pan de ajo",
+      "Precio":"4000",
+      "Productos": ["P1","E2"],
+      "Activo": "1"
+    },
+    {
+      "Nombre":"2 Pizzas de Pepperoni",
+      "Precio":"7000",
+      "Productos": ["P2","P2"],
+      "Activo": "1"
+    },
+    {
+      "Nombre":"Pasta boloñesa + Ensalada césar",
+      "Precio":"4000",
+      "Productos": ["E1","E5"],
+      "Activo": "1"
+    }
+  ]
+}

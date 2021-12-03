@@ -3,27 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ExamenIS.Handlers;
 
 namespace ExamenIS.Controllers
 {
     public class HomeController : Controller
     {
+
+        private ComboHandler AccesoMetodosCombo;
+        public HomeController() {
+            AccesoMetodosCombo = new ComboHandler();
+        }
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Combos = AccesoMetodosCombo.RecuperarListaProductos();
             return View();
         }
     }

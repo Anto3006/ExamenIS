@@ -1,0 +1,34 @@
+{
+  "Productos": [
+    {
+      "Id": "E1",
+      "Nombre": "Pasta Boloñesa",
+      "Precio": "3500",
+      "Imagen": "pastaBoloñesa.jpg"
+    },
+    {
+      "Id": "E2",
+      "Nombre": "Pan de ajo",
+      "Precio": "1500",
+      "Imagen": "panDeAjo.jpg"
+    },
+    {
+      "Id": "E3",
+      "Nombre": "Lasaña",
+      "Precio": "4500",
+      "Imagen": "lasaña.jpg"
+    },
+    {
+      "Id": "E4",
+      "Nombre": "Focaccia",
+      "Precio": "1500",
+      "Imagen": "focaccia.jpg"
+    },
+    {
+      "Id": "E5",
+      "Nombre": "Ensalada César",
+      "Precio": "1500",
+      "Imagen": "ensaladaCesar.jpg"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+﻿INSERT INTO Producto VALUES('P1','Jamón',3500,'pizzaDeJamon.jpg',1)
+INSERT INTO Producto VALUES('P2','Pepperoni',4000,'pizzaDePepperoni.jpg',1)
+INSERT INTO Producto VALUES('P3','Hawaiana',5000,'pizzaHawaiana',1)
+INSERT INTO Producto VALUES('P4','Prosciutto y arúgula',6000,'pizzaDeProsciuttoArugula.jpg',1)
+INSERT INTO Producto VALUES('P5','Margarita',3000,'pizzaMargarita.jpg',1)

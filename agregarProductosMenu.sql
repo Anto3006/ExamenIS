@@ -1,0 +1,5 @@
+﻿INSERT INTO Producto VALUES('PM1','Pasta boloñesa',3500,'pastaBoloñesa.jpg',0)
+INSERT INTO Producto VALUES('PM2','Pan de ajo',1500,'panDeAjo.jpg',0)
+INSERT INTO Producto VALUES('PM3','Lasaña',4500,'lasaña.jpg',0)
+INSERT INTO Producto VALUES('PM4','Focaccia',1500,'focaccia.jpg',0)
+INSERT INTO Producto VALUES('PM5','Ensalada César',1500,'ensaladaCesar.jpg',0)
