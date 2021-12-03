@@ -32,6 +32,7 @@ namespace ExamenIS.Models
             else {
                 Items.Add(new ItemCarritoModel(producto, cantidad));
             }
+            CalcularPrecioTotal();
         }
 
         private bool VerificarSiProductoEnCarrito(ProductoModel producto)
@@ -52,6 +53,7 @@ namespace ExamenIS.Models
                 if (item.Producto.Equals(producto))
                 {
                     item.Cantidad += cantidad;
+                    item.CalcularPrecioTotal();
                 }
             }
         }

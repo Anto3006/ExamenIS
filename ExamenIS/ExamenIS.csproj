@@ -131,6 +131,7 @@
     <Compile Include="Handlers\ProductoGeneralHandler.cs" />
     <Compile Include="Handlers\ProductoMenuHandler.cs" />
     <Compile Include="Handlers\ProductoPizzaHandler.cs" />
+    <Compile Include="Handlers\ProductoPizzaPersonalizadaHandler.cs" />
     <Compile Include="Models\CarritoModel.cs" />
     <Compile Include="Models\CombosModel.cs" />
     <Compile Include="Models\ItemCarritoModel.cs" />
@@ -238,10 +239,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Producto\CrearPizzaPersonalizada.cshtml" />
     <Content Include="Views\Producto\Menu.cshtml" />
+    <Content Include="Views\Carrito\CarritoDeCompras.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Carrito\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
