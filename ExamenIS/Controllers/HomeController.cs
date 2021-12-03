@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ExamenIS.Handlers;
+using ExamenIS.Models;
 
 namespace ExamenIS.Controllers
 {
@@ -17,6 +18,7 @@ namespace ExamenIS.Controllers
         public ActionResult Index()
         {
             ViewBag.Combos = AccesoMetodosCombo.RecuperarListaProductos();
+            Session.Add("Carrito", new CarritoModel());
             return View();
         }
     }

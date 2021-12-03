@@ -130,7 +130,9 @@
     <Compile Include="Handlers\ProductoGeneralHandler.cs" />
     <Compile Include="Handlers\ProductoMenuHandler.cs" />
     <Compile Include="Handlers\ProductoPizzaHandler.cs" />
+    <Compile Include="Models\CarritoModel.cs" />
     <Compile Include="Models\CombosModel.cs" />
+    <Compile Include="Models\ItemCarritoModel.cs" />
     <Compile Include="Models\PizzaPersonalizadaModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
