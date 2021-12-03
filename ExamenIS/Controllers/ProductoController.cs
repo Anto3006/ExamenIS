@@ -10,19 +10,25 @@ namespace ExamenIS.Controllers
 {
     public class ProductoController : Controller
     {
-        private IngredientesHandler AccesoMetodosIngredientes;
+        private ProductoHandler AccesoMetodosProductos;
 
         public ProductoController() {
-            AccesoMetodosIngredientes = new IngredientesHandler();
+            AccesoMetodosProductos = new ProductoHandler();
         }
 
         public ActionResult CrearPizzaPersonalizada() {
-            ViewBag.Ingredientes = AccesoMetodosIngredientes.RecuperarListaIngredientes();
+            ViewBag.Ingredientes = AccesoMetodosProductos.RecuperarListaIngredientes();
             return View();
         }
 
         public JsonResult ObtenerJsonIngredientes() {
-            return Json(AccesoMetodosIngredientes.TransformarJsonListaIngredientes(AccesoMetodosIngredientes.RecuperarListaIngredientes()));
+            return Json(AccesoMetodosProductos.TransformarJsonListaProductos(AccesoMetodosProductos.RecuperarListaIngredientes()));
+        }
+
+        public ActionResult Menu() {
+            ViewBag.ProductosMenu = AccesoMetodosProductos.RecuperarListaProductosMenu();
+            ViewBag.PizzasMenu = AccesoMetodosProductos.RecuperarListaPizzasMenu();
+            return View();
         }
     }
 }

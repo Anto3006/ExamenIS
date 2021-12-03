@@ -31,8 +31,7 @@ function agregarIngrediente(nombreIngrediente) {
 
 function crearResumenIngrediente(nombreIngrediente) {
     let filaIngrediente = document.createElement("div");
-    filaIngrediente.classList.add(...["row", "m-4"]);
-
+    filaIngrediente.classList.add(...["row","mb-3"]);
     let columnaNombre = document.createElement("div")
     columnaNombre.classList.add("col-3")
     columnaNombre.innerHTML = nombreIngrediente;
