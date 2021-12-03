@@ -11,14 +11,17 @@ namespace ExamenIS.Models
         public List<ItemCarritoModel> Items { get; set; }
         public double PrecioTotal { get; set; }
 
-        public CarritoModel() {
+        public CarritoModel()
+        {
             Items = new List<ItemCarritoModel>();
             PrecioTotal = 0;
         }
 
-        public void CalcularPrecioTotal() {
+        public void CalcularPrecioTotal()
+        {
             PrecioTotal = 0;
-            foreach (ItemCarritoModel itemCarrito in Items) {
+            foreach (ItemCarritoModel itemCarrito in Items)
+            {
                 PrecioTotal += itemCarrito.PrecioTotal;
             }
         }
@@ -29,7 +32,8 @@ namespace ExamenIS.Models
             {
                 AgregarCantidadAProducto(producto, cantidad);
             }
-            else {
+            else
+            {
                 Items.Add(new ItemCarritoModel(producto, cantidad));
             }
             CalcularPrecioTotal();
@@ -47,7 +51,8 @@ namespace ExamenIS.Models
             return false;
         }
 
-        private void AgregarCantidadAProducto(ProductoModel producto, int cantidad) {
+        private void AgregarCantidadAProducto(ProductoModel producto, int cantidad)
+        {
             foreach (ItemCarritoModel item in Items)
             {
                 if (item.Producto.Equals(producto))
@@ -55,6 +60,34 @@ namespace ExamenIS.Models
                     item.Cantidad += cantidad;
                     item.CalcularPrecioTotal();
                 }
+            }
+        }
+
+        public void CambiarCantidadAProducto(String idProducto, int cantidad)
+        {
+            foreach (ItemCarritoModel item in Items)
+            {
+                if (item.Producto.Id == idProducto)
+                {
+                    item.Cantidad = cantidad;
+                    item.CalcularPrecioTotal();
+                }
+            }
+        }
+
+        public void EliminarProductoCarrito(String idProducto) {
+            ItemCarritoModel itemAEliminar = null;
+            bool itemEncontrado = false;
+            foreach (ItemCarritoModel item in Items)
+            {
+                if (item.Producto.Id == idProducto)
+                {
+                    itemEncontrado = true;
+                    itemAEliminar = item;
+                }
+            }
+            if (itemEncontrado) {
+                Items.Remove(itemAEliminar);
             }
         }
     }

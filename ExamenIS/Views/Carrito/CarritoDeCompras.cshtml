@@ -6,6 +6,8 @@
         </div>
         <div class="col bg-primary"></div>
     </div>
+    <div id="cambiar-cantidad-carrito" data-request-url="@Url.Action("ActualizarCantidadCarrito","Carrito")"></div>
+    <div id="eliminar-producto-carrito" data-request-url="@Url.Action("EliminarProductoCarrito","Carrito")"></div>
     <div class="row">
         <div class="container">
             <div class="row">
@@ -25,11 +27,11 @@
                     {
                         @itemCarrito.Producto.GenerarResumen(itemCarrito.Cantidad);
                     }
-                    <div class="row h1 m-4" id="fila-precio-total-pizza">
+                    <div class="row h1 m-4" id="fila-precio-total-compra">
                         <div class="col-4">
                             Total:
                         </div>
-                        <div class="col-4" id="precio-total-pizza">
+                        <div class="col-4" id="precio-total-compra">
                             ₡@ViewBag.Carrito.PrecioTotal
                         </div>
                     </div>
@@ -41,3 +43,4 @@
         </div>
     </div>
 </div>
+<script src="~/Scripts/Carrito.js"></script>

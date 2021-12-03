@@ -47,5 +47,13 @@ namespace ExamenIS.Handlers
             combo.Productos = AccesoMetodosProductoMenu.TransformarTablaALista(tablaResultado);
             return combo;
         }
+
+        public override ProductoModel ObtenerProducto(string idCombo)
+        {
+            String consulta = "SELECT * FROM Combo WHERE idComboPK = @idCombo";
+            SqlCommand comandoParaConsulta = new SqlCommand(consulta, ConexionPizzeria);
+            comandoParaConsulta.Parameters.AddWithValue("@idCombo", idCombo);
+            return TransformarTablaALista(CrearTablaConsulta(comandoParaConsulta))[0];
+        }
     }
 }

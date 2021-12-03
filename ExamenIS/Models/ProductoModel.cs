@@ -38,13 +38,13 @@ namespace ExamenIS.Models
                              Nombre + "\n" +
                              "</div>\n" +
                              "<div class=\"col-2\">"+
-                             "<input type = \"number\" class=\"form-control\" min=\"0\" style=\"width:60%\" value=\"" + cantidad.ToString() + "\">\n"+
+                             "<input type = \"number\" class=\"form-control seleccionador-cantidad\" min=\"0\" style=\"width:60%\" onchange=\"actualizarCantidad('" + Id + "')\" value=\"" + cantidad.ToString() + "\">\n"+
                             "</div>\n"+
                             "<div class=\"col-3\">"+
                                 "₡" + (cantidad*Precio).ToString() + "\n" +
                             "</div>" +
                             "<div class=\"col-1\">" +
-                                "<button type = \"button\" class=\"btn-close btn-sm\"></button>" +
+                                "<button type = \"button\" class=\"btn-close btn-sm\" onclick=\"eliminarProducto('" + Id + "')\"></button>" +
                             "</div>" + 
                            "</div>";
       

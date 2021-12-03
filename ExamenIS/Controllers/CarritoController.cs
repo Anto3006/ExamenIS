@@ -12,10 +12,12 @@ namespace ExamenIS.Controllers
     {
         private ProductoMenuHandler AccesoMetodosProductosMenu;
         private ProductoPizzaPersonalizadaHandler AccesoMetodosPizzaPersonalizada;
+        private ComboHandler AccesoMetodosCombo;
 
         public CarritoController() {
             AccesoMetodosProductosMenu = new ProductoMenuHandler();
             AccesoMetodosPizzaPersonalizada = new ProductoPizzaPersonalizadaHandler();
+            AccesoMetodosCombo = new ComboHandler();
         }
 
         public String AgregarProductoAlCarritoPorId(String idProducto, int cantidad) {
@@ -50,6 +52,15 @@ namespace ExamenIS.Controllers
             return "1";
         }
 
+        public String AgregarComboAlCarritoPorId(String idCombo, int cantidad)
+        {
+            if (Session["Carrito"] == null)
+            {
+                Session["Carrito"] = new CarritoModel();
+            }
+            return this.AgregarProductoAlCarrito(AccesoMetodosCombo.ObtenerProducto(idCombo), cantidad);
+        }
+
         public ActionResult CarritoDeCompras() {
             if (Session["Carrito"] == null)
             {
@@ -57,6 +68,22 @@ namespace ExamenIS.Controllers
             }
             ViewBag.Carrito = Session["Carrito"];
             return View();
+        }
+
+        public String ActualizarCantidadCarrito(String idProducto, int nuevaCantidad) {
+            CarritoModel carrito = Session["Carrito"] as CarritoModel;
+            carrito.CambiarCantidadAProducto(idProducto, nuevaCantidad);
+            carrito.CalcularPrecioTotal();
+            Session["Carrito"] = carrito;
+            return carrito.PrecioTotal.ToString();
+        }
+
+        public String EliminarProductoCarrito(String idProducto) {
+            CarritoModel carrito = Session["Carrito"] as CarritoModel;
+            carrito.EliminarProductoCarrito(idProducto);
+            carrito.CalcularPrecioTotal();
+            Session["Carrito"] = carrito;
+            return carrito.PrecioTotal.ToString();
         }
     }
 }
