@@ -16,35 +16,22 @@
     <div class="row">
         <p class="h1 m-4">Pruebe nuestros combos:</p>
     </div>
-    <div class="row" style="margin-left:3%">
-        <div class="col-lg-4">
-            <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded" style="max-width: 35rem; border-radius: 15px">
-                <img class="card-img-top imagen-producto" src="~/imagenes/bannerPaginaPrincipal.jpg" alt="Card image cap">
-                <div class="btn btn-primary noHover precio-producto" >Precio</div>
-                <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
-                <div class="card-body">
-                    <p class="h5">Nombre del combo</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded" style="max-width: 35rem; border-radius: 15px">
-                <img class="card-img-top imagen-producto" src="~/imagenes/bannerPaginaPrincipal.jpg" alt="Card image cap">
-                <div class="btn btn-primary noHover precio-producto">Precio</div>
-                <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
-                <div class="card-body">
-                    <p class="h5">Nombre del combo</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded" style="max-width: 35rem; border-radius: 15px">
-                <img class="card-img-top imagen-producto" src="~/imagenes/bannerPaginaPrincipal.jpg" alt="Card image cap">
-                <div class="btn btn-primary noHover precio-producto">Precio</div>
-                <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
-                <div class="card-body">
-                    <p class="h5">Nombre del combo</p>
-                </div>
+    <div class="row">
+        <div class="container">
+            <div class="row d-flex">
+                @foreach (var combo in ViewBag.Combos)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
+                            <img class="imagen-producto" src="~/productos/imagenes/@combo.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
+                            <div class="btn btn-primary noHover precio-producto">Precio: ₡@combo.Precio</div>
+                            <button type="button" class="btn btn-primary boton-agregar-carrito">Agregar al carrito</button>
+                            <div class="card-body">
+                                <p class="h5">@combo.Nombre</p>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
