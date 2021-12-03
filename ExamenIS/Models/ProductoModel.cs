@@ -11,5 +11,6 @@ namespace ExamenIS.Models
         public double Precio { get; set; }
         public String NombreImagen { get; set; }
 
+        public String Id { get; set; }
     }
 }

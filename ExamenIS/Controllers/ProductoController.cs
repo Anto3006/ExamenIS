@@ -10,24 +10,31 @@ namespace ExamenIS.Controllers
 {
     public class ProductoController : Controller
     {
-        private ProductoHandler AccesoMetodosProductos;
+        private IngredienteHandler AccesoMetodosIngredientes;
+        private ProductoMenuHandler AccesoMetodosProductosMenu;
+        private ProductoPizzaHandler AccesoMetodosProductoPizza;
+        private ComboHandler AccesoMetodosCombos;
 
         public ProductoController() {
-            AccesoMetodosProductos = new ProductoHandler();
+            AccesoMetodosIngredientes = new IngredienteHandler();
+            AccesoMetodosProductosMenu = new ProductoMenuHandler();
+            AccesoMetodosProductoPizza = new ProductoPizzaHandler();
+            AccesoMetodosCombos = new ComboHandler();
         }
 
         public ActionResult CrearPizzaPersonalizada() {
-            ViewBag.Ingredientes = AccesoMetodosProductos.RecuperarListaIngredientes();
+            ViewBag.Ingredientes = AccesoMetodosIngredientes.RecuperarListaProductos();
             return View();
         }
 
         public JsonResult ObtenerJsonIngredientes() {
-            return Json(AccesoMetodosProductos.TransformarJsonListaProductos(AccesoMetodosProductos.RecuperarListaIngredientes()));
+            return Json(AccesoMetodosIngredientes.TransformarJsonListaProductos(AccesoMetodosIngredientes.RecuperarListaProductos()));
         }
 
         public ActionResult Menu() {
-            ViewBag.ProductosMenu = AccesoMetodosProductos.RecuperarListaProductosMenu();
-            ViewBag.PizzasMenu = AccesoMetodosProductos.RecuperarListaPizzasMenu();
+            ViewBag.ProductosMenu = AccesoMetodosProductosMenu.RecuperarListaProductos();
+            ViewBag.PizzasMenu = AccesoMetodosProductoPizza.RecuperarListaProductos();
+            ViewBag.Combos = AccesoMetodosCombos.RecuperarListaProductos();
             return View();
         }
     }

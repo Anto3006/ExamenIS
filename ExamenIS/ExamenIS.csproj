@@ -125,7 +125,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\ProductoHandler.cs" />
+    <Compile Include="Handlers\ComboHandler.cs" />
+    <Compile Include="Handlers\IngredienteHandler.cs" />
+    <Compile Include="Handlers\ProductoGeneralHandler.cs" />
+    <Compile Include="Handlers\ProductoMenuHandler.cs" />
+    <Compile Include="Handlers\ProductoPizzaHandler.cs" />
+    <Compile Include="Models\CombosModel.cs" />
     <Compile Include="Models\PizzaPersonalizadaModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +164,16 @@
     <Content Include="ingredientes\imagenes\piña.jpg" />
     <Content Include="ingredientes\imagenes\prosciutto.jpg" />
     <Content Include="ingredientes\imagenes\tomate.jpg" />
+    <Content Include="productos\imagenes\ensaladaCesar.jpg" />
+    <Content Include="productos\imagenes\focaccia.jpg" />
+    <Content Include="productos\imagenes\lasaña.jpg" />
+    <Content Include="productos\imagenes\panDeAjo.jpg" />
+    <Content Include="productos\imagenes\pastaBoloñesa.jpg" />
+    <Content Include="productos\imagenes\pizzaDeJamon.jpg" />
+    <Content Include="productos\imagenes\pizzaDePepperoni.jpg" />
+    <Content Include="productos\imagenes\pizzaDeProsciuttoArugula.jpg" />
+    <Content Include="productos\imagenes\pizzaHawaiana.jpg" />
+    <Content Include="productos\imagenes\pizzaMargarita.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -189,6 +204,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="ingredientes\ingredientes.json" />
     <Content Include="productos\productos.json" />
+    <Content Include="productos\pizzas.json" />
+    <Content Include="productos\combos.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\CreadorPizza.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -220,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="productos\imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,26 +1,31 @@
 {
   "Productos": [
     {
+      "Id": "P1",
       "Nombre": "Jamón",
       "Precio": "3500",
       "Imagen": "pizzaDeJamon.jpg"
     },
     {
+      "Id": "P2",
       "Nombre": "Pepperoni",
       "Precio": "4000",
       "Imagen": "pizzaDePepperoni.jpg"
     },
     {
+      "Id": "P3",
       "Nombre": "Hawaiana",
       "Precio": "5000",
       "Imagen": "pizzaHawaiana.jpg"
     },
     {
+      "Id": "P4",
       "Nombre": "Prosciutto y arúgula",
       "Precio": "6000",
       "Imagen": "pizzaDeProsciuttoArugula.jpg"
     },
     {
+      "Id": "P5",
       "Nombre": "Margarita",
       "Precio": "3000",
       "Imagen": "pizzaMargarita.jpg"
