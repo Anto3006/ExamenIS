@@ -1,0 +1,46 @@
+﻿<div class="col" style="margin-top:2%">
+    <div class="row">
+        <div class="col-1 bg-primary"></div>
+        <div class="col-sm-auto">
+            <h2 style="font-weight:bold">Su Compra</h2>
+        </div>
+        <div class="col bg-primary"></div>
+    </div>
+    <div id="cambiar-cantidad-carrito" data-request-url="@Url.Action("ActualizarCantidadCarrito","Carrito")"></div>
+    <div id="eliminar-producto-carrito" data-request-url="@Url.Action("EliminarProductoCarrito","Carrito")"></div>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col resumen-compra h5 mt-5" style="margin-left:10%">
+                    <div class="row h4 m-3" id="fila-precio-total-pizza" style="font-weight:bold">
+                        <div class="col-5">
+                            Producto
+                        </div>
+                        <div class="col-2">
+                            Cantidad
+                        </div>
+                        <div class="col-3">
+                            Precio Total
+                        </div>
+                    </div>
+                    @foreach (var itemCarrito in ViewBag.Carrito.Items)
+                    {
+                        @itemCarrito.Producto.GenerarResumen(itemCarrito.Cantidad);
+                    }
+                    <div class="row h1 m-4" id="fila-precio-total-compra">
+                        <div class="col-4">
+                            Total:
+                        </div>
+                        <div class="col-4" id="precio-total-compra">
+                            ₡@ViewBag.Carrito.PrecioTotal
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center"><h3>Proceder a pago</h3></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Carrito.js"></script>

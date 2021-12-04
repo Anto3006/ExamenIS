@@ -62,5 +62,9 @@ namespace ExamenIS.Handlers
         public String TransformarJsonListaProductos(List<ProductoModel> productos) {
             return JsonConvert.SerializeObject(productos);
         }
+
+        public virtual ProductoModel ObtenerProducto(String idProducto) {
+            return new ProductoModel();
+        }
     }
 }

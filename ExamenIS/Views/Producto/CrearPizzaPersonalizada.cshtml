@@ -16,7 +16,7 @@
                         <div class="card card-inicio carta-producto text-center border-dark shadow bg-white rounded m-3" style="height:75%; width:auto; border-radius: 15px">
                             <img class="imagen-producto" src="~/ingredientes/imagenes/@ingrediente.NombreImagen" style="max-height:75%; width:auto" alt="Card image cap">
                             <div class="btn btn-primary noHover precio-producto">Precio: ₡@ingrediente.Precio</div>
-                            <button type="button" class="btn btn-primary boton-agregar-carrito" onclick="agregarIngrediente('@ingrediente.Nombre')">Agregar ingrediente</button>
+                            <button type="button" class="btn btn-primary boton-agregar-carrito" onclick="agregarIngrediente('@ingrediente.Nombre', '@ingrediente.Id')">Agregar ingrediente</button>
                             <div class="card-body">
                                 <p class="h5">@ingrediente.Nombre</p>
                             </div>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <button type="button" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center"><h3>Finalizar Pizza</h3></button>
+                    <a href="~/Producto/Menu" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center" id="agregador-carrito" data-request-url="@Url.Action("AgregarPizzaPersonalizadaAlCarrito","Carrito")" onclick="agregarPizzaAlCarrito()"><h3>Finalizar Pizza y agregar al carrito</h3></a>
                 </div>
             </div>
         </div>

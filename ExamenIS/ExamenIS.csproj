@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -130,7 +131,10 @@
     <Compile Include="Handlers\ProductoGeneralHandler.cs" />
     <Compile Include="Handlers\ProductoMenuHandler.cs" />
     <Compile Include="Handlers\ProductoPizzaHandler.cs" />
+    <Compile Include="Handlers\ProductoPizzaPersonalizadaHandler.cs" />
+    <Compile Include="Models\CarritoModel.cs" />
     <Compile Include="Models\CombosModel.cs" />
+    <Compile Include="Models\ItemCarritoModel.cs" />
     <Compile Include="Models\PizzaPersonalizadaModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +211,7 @@
     <Content Include="productos\pizzas.json" />
     <Content Include="productos\combos.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\Carrito.js" />
     <Content Include="Scripts\CreadorPizza.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -234,6 +239,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Producto\CrearPizzaPersonalizada.cshtml" />
     <Content Include="Views\Producto\Menu.cshtml" />
+    <Content Include="Views\Carrito\CarritoDeCompras.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
