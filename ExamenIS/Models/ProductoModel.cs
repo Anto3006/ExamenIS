@@ -38,9 +38,9 @@ namespace ExamenIS.Models
                              Nombre + "\n" +
                              "</div>\n" +
                              "<div class=\"col-2\">"+
-                             "<input type = \"number\" class=\"form-control seleccionador-cantidad\" min=\"0\" style=\"width:60%\" onchange=\"actualizarCantidad('" + Id + "')\" value=\"" + cantidad.ToString() + "\">\n"+
+                             "<input type = \"number\" class=\"form-control seleccionador-cantidad\" min=\"0\" style=\"width:60%\" onchange=\"actualizarCantidad('" + Id + "','" + Precio + "')\" value=\"" + cantidad.ToString() + "\">\n"+
                             "</div>\n"+
-                            "<div class=\"col-3\">"+
+                            "<div class=\"col-3 precio-total-producto\">" +
                                 "₡" + (cantidad*Precio).ToString() + "\n" +
                             "</div>" +
                             "<div class=\"col-1\">" +

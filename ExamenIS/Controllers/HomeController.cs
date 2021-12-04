@@ -18,7 +18,9 @@ namespace ExamenIS.Controllers
         public ActionResult Index()
         {
             ViewBag.Combos = AccesoMetodosCombo.RecuperarListaProductos();
-            Session.Add("Carrito", new CarritoModel());
+            if (Session["Carrito"] == null){
+                Session.Add("Carrito", new CarritoModel());
+            }
             return View();
         }
     }

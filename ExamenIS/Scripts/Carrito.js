@@ -32,8 +32,10 @@ async function cambiarCantidadCarrito(idProducto, nuevaCantidad) {
     });
 }
 
-function actualizarCantidad(idProducto) {
+function actualizarCantidad(idProducto,precioProducto) {
     let seleccionadorCantidad = document.getElementById(idProducto).getElementsByClassName("seleccionador-cantidad")[0];
+    let espacioPrecioTotal = document.getElementById(idProducto).getElementsByClassName("precio-total-producto")[0];
+    espacioPrecioTotal.innerHTML = "₡" + parseInt(precioProducto) * parseInt(seleccionadorCantidad.value);
     cambiarCantidadCarrito(idProducto, parseInt(seleccionadorCantidad.value));
 }
 
