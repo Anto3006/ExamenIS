@@ -38,6 +38,9 @@ namespace ExamenIS.Controllers
         }
 
         public String AgregarPizzaPersonalizadaAlCarrito(List<String> idIngredientes) {
+            if (Session["IdPizzaPersonalizada"] == null) {
+                Session["IdPizzaPersonalizada"] = 0;
+            }
             int idPizza = (int)Session["IdPizzaPersonalizada"];
             ProductoModel pizzaPersonalizada = AccesoMetodosPizzaPersonalizada.CrearPizzaPersonalizada(idIngredientes,idPizza.ToString());
             idPizza += 1;

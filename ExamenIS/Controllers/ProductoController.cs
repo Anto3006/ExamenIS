@@ -23,9 +23,6 @@ namespace ExamenIS.Controllers
         }
 
         public ActionResult CrearPizzaPersonalizada() {
-            if (Session["IdPizzaPersonalizada"] == null){
-                Session["IdPizzaPersonalizada"] = 0;
-            }
             ViewBag.Ingredientes = AccesoMetodosIngredientes.RecuperarListaProductos();
             return View();
         }
