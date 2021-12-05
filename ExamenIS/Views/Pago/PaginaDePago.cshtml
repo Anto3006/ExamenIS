@@ -1,0 +1,184 @@
+﻿<h3 style="margin-top:35px">Ventana de pago</h3>
+<hr />
+
+<div class="container-fluid">
+    @using (Html.BeginForm("PaginaDePago", "Pago", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col ms-5">
+                <div class="row">
+                    <h3>Información personal:</h3>
+                    <div class="card rounded-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nombre" class="form-label mt-4">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre-comprador" name="nombre-comprador" placeholder="Ingrese su nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id" class="form-label mt-4">Número de Identificación</label>
+                                        <input type="text" class="form-control" id="identificacion-comprador" name="identificacion-comprador" placeholder="Ingrese su número de identificación">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo" class="form-label mt-4">Correo</label>
+                                        <input type="email" class="form-control" id="correo-comprador" name="correo-comprador" placeholder="Ingrese su correo">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <fieldset class="form-group" id="opcionEnvio">
+                                        <legend class="mt-4">Opciones de envío</legend>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="opcionEnvio" id="recogerRestaurante" onclick="activarDetalles()" value="recogerRestaurante">
+                                                Recoger en restaurante
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="opcionEnvio" id="envioDomicilio" onclick="activarDetalles()" value="envioDomicilio">
+                                                Envío Domicilio
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <label for="direccionEnvio" class="form-label mt-4">Dirección de envío</label>
+                                        <textarea class="form-control" name="detalles-envio" id="direccionEnvio" rows="3" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h3>Información de pago</h3>
+                    <h5>Indique la información de la tarjeta.</h5>
+                    <div class="card rounded-3">
+                        <div class="row">
+                            <div class="col-7"></div>
+                            <div class="col" style="margin-top:15px;">
+                                <div class="row"><img src="~/imagenes/tarjetascredito.png" style="width:100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-left:20px;margin-right:20px;margin-top:20px">
+                            <label class="numeroTarjeta" for="numero-tarjeta">Número de Tarjeta</label>
+                            <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" placeholder="0000-0000-0000-0000" maxlength="16" required autofocus inputmode="numeric" pattern="[0-9]{16,16}">
+                        </div>
+                        <div class="col" style="margin-top: 30px; margin-left: 20px; margin-right: 20px; ">
+                            <label for="nombre-en-tarjeta" class="form-label"> Nombre en la tarjeta </label>
+                            <input type="text" id="nombreTarjeta" class="form-control" name="nombreTarjeta" placeholder="Rigoberto Gutierrez" required autofocus />
+                        </div>
+                        <div class="row">
+                            <div class="col" style="margin-top: 30px; margin-left: 20px; margin-right: 0px; margin-bottom: 20px ">
+                                <div class="row">
+                                    <label for="mes-expiracion" class="form-label"> Expiración </label>
+                                    <div class="col">
+                                        <select id="mes-expiracion" class="form-select" required>
+                                            <option id="opcion-base-mes" value="" default="default" selected="selected">Mes</option>
+                                            <option value="1">01</option>
+                                            <option value="2">02</option>
+                                            <option value="3">03</option>
+                                            <option value="4">04</option>
+                                            <option value="5">05</option>
+                                            <option value="6">06</option>
+                                            <option value="7">07</option>
+                                            <option value="8">08</option>
+                                            <option value="9">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select id="anho-expiracion" class="form-select" required>
+                                            <option id="opcion-base-anho" value="" default="default" selected="selected">Año</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-3" style="margin-top: 30px; margin-left: 20px; margin-right: 20px;margin-bottom:20px">
+                                <label for="cvc" class="form-label">‎‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ </label>
+                                <input type="text" class="form-control" id="cvc" name="cvc" placeholder="CVC" maxlength="3" size="3" required autofocus />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ms-5">
+                <div class="row">
+                    <h3>Resumen de compra:</h3>
+                    <div class="card rounded-3">
+                        <div class="card-body">
+                            <div class="col resumen-compra h5 mt-5" style="margin-left:10%">
+                                <div class="row h4 m-3" id="fila-precio-total-pizza" style="font-weight:bold">
+                                    <div class="col-5">
+                                        Producto
+                                    </div>
+                                    <div class="col-2">
+                                        Cantidad
+                                    </div>
+                                    <div class="col-3">
+                                        Precio Total
+                                    </div>
+                                </div>
+                                @foreach (var itemCarrito in ViewBag.Carrito.Items)
+                                {
+                                    <div class="row h4 @itemCarrito.Producto.GenerarMargenes()" id="@itemCarrito.Producto.Id">
+                                        @itemCarrito.Producto.GenerarNombreResumen()
+                                        @itemCarrito.Producto.GenerarCantidadResumenPago(itemCarrito.Cantidad)
+                                        @itemCarrito.Producto.GenerarPrecioResumen(itemCarrito.Cantidad)
+                                    </div>
+                                    @itemCarrito.Producto.GenerarDetalles();
+                                }
+                                <div class="row h1 m-4" id="fila-precio-total-compra">
+                                    <div class="col-4">
+                                        Total:
+                                    </div>
+                                    <div class="col-4" id="precio-total-compra">
+                                        ₡@ViewBag.Carrito.PrecioTotal
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-3">
+                     <input type="submit" id="boton-pagar" class="btn btn-primary btn-lg boton-actividades" value="Finalizar y pagar" style="margin-top:25px" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script>
+    let dropdownAño = document.getElementById('anho-expiracion');
+    let contadorAños = new Date().getFullYear();
+    let añoLimite = contadorAños + 5;
+    while (contadorAños <= añoLimite) {
+        let opcionAño = document.createElement('option');
+        opcionAño.text = contadorAños;
+        opcionAño.value = contadorAños;
+        dropdownAño.add(opcionAño);
+        contadorAños += 1;
+    }
+</script>
+<script>
+
+    function activarDetalles() {
+        let radioEnvioDomicilio = document.getElementById("envioDomicilio");
+        let espacioDetallesEnvio = document.getElementById("direccionEnvio");
+        espacioDetallesEnvio.value = "";
+        if (!radioEnvioDomicilio.checked) {
+            espacioDetallesEnvio.disabled = true;
+        } else {
+            console.log("A")
+            espacioDetallesEnvio.disabled = false;
+        }
+    }
+</script>
+

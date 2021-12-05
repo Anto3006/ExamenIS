@@ -25,7 +25,13 @@
                     </div>
                     @foreach (var itemCarrito in ViewBag.Carrito.Items)
                     {
-                        @itemCarrito.Producto.GenerarResumen(itemCarrito.Cantidad);
+                        <div class="row h4 @itemCarrito.Producto.GenerarMargenes()" id="@itemCarrito.Producto.Id">
+                            @itemCarrito.Producto.GenerarNombreResumen()
+                            @itemCarrito.Producto.GenerarCantidadResumen(itemCarrito.Cantidad)
+                            @itemCarrito.Producto.GenerarPrecioResumen(itemCarrito.Cantidad)
+                            @itemCarrito.Producto.GenerarBotonEliminarResumen()
+                        </div>
+                        @itemCarrito.Producto.GenerarDetalles();
                     }
                     <div class="row h1 m-4" id="fila-precio-total-compra">
                         <div class="col-4">
@@ -37,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <button type="button" class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center"><h3>Proceder a pago</h3></button>
+                    <a class="btn btn-primary boton-finalizar-pizza p-3 ps-5 pe-5 text-center" href="@Url.Action("PaginaDePago","Pago")"><h3>Proceder a pago</h3></a>
                 </div>
             </div>
         </div>
