@@ -1,0 +1,99 @@
+﻿<div class="row h1 ms-5">
+    Compra realizada con éxito
+</div>
+<div class="row">
+    <div class="col ms-5">
+        <div class="row">
+            <h3>Resumen de compra:</h3>
+            <div class="card rounded-3">
+                <div class="card-body">
+                    <div class="col resumen-compra h5 mt-5" style="margin-left:10%">
+                        <div class="row h4 m-3" id="fila-precio-total-pizza" style="font-weight:bold">
+                            <div class="col-5">
+                                Producto
+                            </div>
+                            <div class="col-2">
+                                Cantidad
+                            </div>
+                            <div class="col-3">
+                                Precio Total
+                            </div>
+                        </div>
+                        @foreach (var itemCarrito in ViewBag.Carrito.Items)
+                        {
+                            <div class="row h4 @itemCarrito.Producto.GenerarMargenes()" id="@itemCarrito.Producto.Id">
+                                @itemCarrito.Producto.GenerarNombreResumen()
+                                @itemCarrito.Producto.GenerarCantidadResumenPago(itemCarrito.Cantidad)
+                                @itemCarrito.Producto.GenerarPrecioResumen(itemCarrito.Cantidad)
+                            </div>
+                            @itemCarrito.Producto.GenerarDetalles();
+                        }
+                        <div class="row h1 m-4" id="fila-precio-total-compra">
+                            <div class="col-4">
+                                Total:
+                            </div>
+                            <div class="col-4" id="precio-total-compra">
+                                ₡@ViewBag.Carrito.PrecioTotal
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col ms-5">
+        <div class="row">
+            <h3>Información personal:</h3>
+            <div class="card rounded-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row h3">
+                                Nombre:
+                            </div>
+                            <div class="row h5">
+                                @ViewBag.NombreComprador
+                            </div>
+                            <div class="row h3">
+                                Identificación:
+                            </div>
+                            <div class="row h5">
+                                @ViewBag.Identificacion
+                            </div>
+                            <div class="row h3">
+                                Correo:
+                            </div>
+                            <div class="row h5">
+                                @ViewBag.Correo
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row h3">
+                                Tipo de envío:
+                            </div>
+                            <div class="row h5">
+                                @if (ViewBag.TipoEnvio == "recogerRestaurante")
+                                {
+                                    @:Recoger en restaurante
+                                }
+                                else
+                                {
+                                    @:Envío a domicilio
+                                }
+                            </div>
+                            @if (ViewBag.TipoEnvio != "recogerRestaurante")
+                            {
+                                <div class="row h3">
+                                    Detalles de envío:
+                                </div>
+                                <div class="row h5">
+                                    @ViewBag.DetallesEnvio
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
